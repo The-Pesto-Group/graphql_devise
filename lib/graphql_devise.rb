@@ -11,7 +11,7 @@ if Gem::Version.new(GraphQL::VERSION) < Gem::Version.new('2.0')
   GraphQL::Schema::Field.accepts_definition(:authenticate)
 end
 
-loader = Zeitwerk::Loader.for_gem
+loader = Zeitwerk::Loader.for_gem(warn_on_extra_files: false)
 
 loader.collapse("#{__dir__}/graphql_devise/concerns")
 loader.collapse("#{__dir__}/graphql_devise/errors")
